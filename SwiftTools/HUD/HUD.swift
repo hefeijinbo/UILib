@@ -101,7 +101,7 @@ public class HUD: UIView {
         if (type == .loading) {
             let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
             rotation.toValue = Double.pi * 2
-            rotation.duration = 0.6
+            rotation.duration = 1.2
             rotation.repeatCount = MAXFLOAT
             rotation.isRemovedOnCompletion = false
             imageView.layer.add(rotation, forKey: "rotation")

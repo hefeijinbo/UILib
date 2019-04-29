@@ -22,6 +22,7 @@
 		5CCB09421C54A5BC00976619 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB09411C54A5BC00976619 /* ViewController.swift */; };
 		5CCB09451C54A5BC00976619 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCB09431C54A5BC00976619 /* Main.storyboard */; };
 		5CCB094A1C54A5BC00976619 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCB09481C54A5BC00976619 /* LaunchScreen.storyboard */; };
+		E4E8BD70227745F600AF45FF /* ImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E8BD6F227745F600AF45FF /* ImageBrowser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,7 @@
 		5CCB09441C54A5BC00976619 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CCB09491C54A5BC00976619 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CCB094B1C54A5BC00976619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4E8BD6F227745F600AF45FF /* ImageBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBrowser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		5CC0B79A2100EA4F006F6DE4 /* SwiftTools */ = {
 			isa = PBXGroup;
 			children = (
+				E4E8BD6E227745F600AF45FF /* ImageBrowser */,
 				5CC0B7A12100EA4F006F6DE4 /* NavigationView */,
 				5CC0B7A82100EA4F006F6DE4 /* Toast */,
 				5CC0B7B62100EA4F006F6DE4 /* HUD */,
@@ -141,6 +144,14 @@
 				5CC0B79A2100EA4F006F6DE4 /* SwiftTools */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		E4E8BD6E227745F600AF45FF /* ImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				E4E8BD6F227745F600AF45FF /* ImageBrowser.swift */,
+			);
+			path = ImageBrowser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 				5CCB09421C54A5BC00976619 /* ViewController.swift in Sources */,
 				5CCB09401C54A5BC00976619 /* AppDelegate.swift in Sources */,
 				5CA31B3220DF1E22009ADB2D /* OCTestViewController.m in Sources */,
+				E4E8BD70227745F600AF45FF /* ImageBrowser.swift in Sources */,
 				5CC0B7D22100EA4F006F6DE4 /* HUD.swift in Sources */,
 				5CC0B7C62100EA4F006F6DE4 /* Toast.swift in Sources */,
 				5CA319B320DD47C9009ADB2D /* TestNavViewController.swift in Sources */,

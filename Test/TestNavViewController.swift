@@ -14,14 +14,6 @@ class TestNavViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        NavigationView.BGColor = UIColor.red
-//        NavigationView.TitleColor = UIColor.white
-//        NavigationView.ButtonColor = UIColor.white
-
-        navigationView.backgroundColor = NavigationView.BGColor
-        navigationView.setTitle("测试", color: NavigationView.TitleColor)
-        navigationView.setLeftButtonImage(NavigationView.ArrowImage, target: self, action: #selector(backAction))
-        navigationView.setRightButtonImage(NavigationView.AddImage, target: self, action: #selector(backAction))
     }
     
     @objc func backAction() {

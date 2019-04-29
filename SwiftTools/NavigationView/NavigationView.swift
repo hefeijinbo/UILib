@@ -40,14 +40,12 @@ public class NavigationView: UIView {
         super.init(frame: frame)
         let view = Bundle(for: NavigationView.self).loadNibNamed("NavigationView", owner: self, options: nil)?.first as! UIView
         fillSubView(view)
-        backgroundColor = NavigationView.BGColor
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         let view = Bundle(for: NavigationView.self).loadNibNamed("NavigationView", owner: self, options: nil)?.first as! UIView
         fillSubView(view)
-        backgroundColor = NavigationView.BGColor
     }
     
     @IBOutlet public weak var lineView: UIView!
@@ -61,7 +59,7 @@ public class NavigationView: UIView {
 }
 
 extension UIView {
-    @objc public func fillSubView(_ view: UIView) {
+    func fillSubView(_ view: UIView) {
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[view]|", options: .alignAllBottom, metrics: nil, views: ["view": view]))

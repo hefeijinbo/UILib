@@ -15,25 +15,25 @@ public class NavigationView: UIView {
     }
     
     @objc public func setLeftButtonImage(_ image: UIImage, target: Any, action: Selector) {
-        leftButton.setImage(image, for: UIControlState.normal)
-        leftButton.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
+        leftButton.setImage(image, for: .normal)
+        leftButton.addTarget(target, action: action, for: .touchUpInside)
     }
     
     @objc public func setRightButtonImage(_ image: UIImage, target: Any, action: Selector) {
-        rightButton.setImage(image, for: UIControlState.normal)
-        rightButton.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
+        rightButton.setImage(image, for: .normal)
+        rightButton.addTarget(target, action: action, for: .touchUpInside)
     }
     
     @objc public func setRightButtonTitle(_ title: String, titleColor: UIColor, target: Any, action: Selector) {
-        rightButton.setTitle(title, for: UIControlState.normal)
-        rightButton.setTitleColor(titleColor, for: UIControlState.normal)
-        rightButton.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
+        rightButton.setTitle(title, for: .normal)
+        rightButton.setTitleColor(titleColor, for: .normal)
+        rightButton.addTarget(target, action: action, for: .touchUpInside)
     }
     
     @objc public func setRightButton2Title(_ title: String, titleColor: UIColor, target: Any, action: Selector) {
-        rightButton2.setTitle(title, for: UIControlState.normal)
-        rightButton2.setTitleColor(titleColor, for: UIControlState.normal)
-        rightButton2.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
+        rightButton2.setTitle(title, for: .normal)
+        rightButton2.setTitleColor(titleColor, for: .normal)
+        rightButton2.addTarget(target, action: action, for: .touchUpInside)
     }
     
     required public override init(frame: CGRect) {

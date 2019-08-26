@@ -14,6 +14,13 @@ public class NavigationView: UIView {
         titleLabel.textColor = color
     }
     
+    @objc public func setLeftButtonTitle(_ title: String, titleColor: UIColor, target: Any, action: Selector) {
+        leftButton.setImage(nil, for: .normal)
+        leftButton.setTitle(title, for: .normal)
+        leftButton.setTitleColor(titleColor, for: .normal)
+        leftButton.addTarget(target, action: action, for: .touchUpInside)
+    }
+    
     @objc public func setLeftButtonImage(_ image: UIImage, target: Any, action: Selector) {
         leftButton.setImage(image, for: .normal)
         leftButton.addTarget(target, action: action, for: .touchUpInside)
@@ -36,16 +43,23 @@ public class NavigationView: UIView {
         rightButton2.addTarget(target, action: action, for: .touchUpInside)
     }
     
+    @objc public func setRightButton2Image(_ image: UIImage, target: Any, action: Selector) {
+        rightButton2.setImage(image, for: .normal)
+        rightButton2.addTarget(target, action: action, for: .touchUpInside)
+    }
+    
     required public override init(frame: CGRect) {
         super.init(frame: frame)
         let view = Bundle(for: NavigationView.self).loadNibNamed("NavigationView", owner: self, options: nil)?.first as! UIView
         fillSubView(view)
+        sendSubviewToBack(view)
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         let view = Bundle(for: NavigationView.self).loadNibNamed("NavigationView", owner: self, options: nil)?.first as! UIView
         fillSubView(view)
+        sendSubviewToBack(view)
     }
     
     @IBOutlet public weak var lineView: UIView!
@@ -56,6 +70,14 @@ public class NavigationView: UIView {
     @objc @IBOutlet public weak var rightButton2: UIButton!
     @objc @IBOutlet public var height: NSLayoutConstraint!
 
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        if #available(iOS 11.0, *) {
+            if let bottom = UIApplication.shared.keyWindow?.safeAreaInsets.bottom, bottom > 0 {
+                height?.constant = 64 + 24
+            }
+        }
+    }
 }
 
 extension UIView {

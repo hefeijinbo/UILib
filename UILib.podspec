@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
     s.platform     = :ios
     s.source_files = 'SwiftTools/**/*.swift'
     s.resources    = 'SwiftTools/**/*.{png,jpg,xib,storyboard,xcassets}'
-    s.swift_version = '4.2'
+    s.swift_version = '5.0'
 end

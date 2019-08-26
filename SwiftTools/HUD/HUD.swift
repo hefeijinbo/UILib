@@ -11,24 +11,53 @@ import UIKit
 public class HUD: UIView {
     
     //MARK: - public
-    @objc public static func showLoading(_ title: String) {
-        if let hud = bundle.loadNibNamed("HUD", owner: nil, options: nil)?.first as? HUD {
-            hud.show(type: .loading, title: title)
+    @discardableResult
+    @objc public static func showLoading(_ title: String) -> HUD {
+        if let hud = existHUD, hud.type == .loading {
+            hud.reload(type: .loading, title: title)
+            return hud
         }
+        let hud = bundle.loadNibNamed("HUD", owner: nil, options: nil)?.first as! HUD
+        hud.addToWindow()
+        hud.reload(type: .loading, title: title)
+        return hud
     }
 
-    @objc public static func showSuccess(_ title: String) {
-        if let hud = bundle.loadNibNamed("HUD", owner: nil, options: nil)?.first as? HUD {
-            hud.show(type: .success, title: title)
+    @discardableResult
+    @objc public static func showSuccess(_ title: String) -> HUD {
+        if let hud = existHUD {
+            hud.reload(type: .success, title: title)
+            return hud
         }
+        let hud = bundle.loadNibNamed("HUD", owner: nil, options: nil)?.first as! HUD
+        hud.addToWindow()
+        hud.reload(type: .success, title: title)
+        return hud
     }
     
-    @objc public static func showError(_ title: String){
-        if let hud = bundle.loadNibNamed("HUD", owner: nil, options: nil)?.first as? HUD {
-            hud.show(type: .failure, title: title)
+    @discardableResult
+    @objc public static func showError(_ title: String) -> HUD {
+        if let hud = existHUD {
+            hud.reload(type: .failure, title: title)
+            return hud
         }
+        let hud = bundle.loadNibNamed("HUD", owner: nil, options: nil)?.first as! HUD
+        hud.addToWindow()
+        hud.reload(type: .failure, title: title)
+        return hud
     }
     
+    static var existHUD: HUD? {
+        guard let superView = UIApplication.shared.keyWindow else {
+            return nil
+        }
+        for view in superView.subviews {
+            if let view = view as? HUD {
+                return view
+            }
+        }
+        return nil
+    }
     
     @objc public static func hide() {
         for window in UIApplication.shared.windows {
@@ -58,17 +87,10 @@ public class HUD: UIView {
         }
     }
     
-    private func show(type:HUDType,title:String) {
+    func addToWindow() {
         guard let superView = UIApplication.shared.keyWindow else {
             return
         }
-        for view in superView.subviews {
-            if let view = view as? HUD {
-                view.hide()
-            }
-        }
-        
-        labelTitle.text = title
         var ratio:CGFloat = 1.5 //iPad1.5倍缩放
         if UIDevice.current.userInterfaceIdiom != .pad {
             ratio = UIScreen.main.bounds.size.width / 375.0//相对于iPhone 6的比例
@@ -83,29 +105,38 @@ public class HUD: UIView {
         constraintLabelTitleMaxWidth.constant = 160 * ratio
         constraintImageViewWidth.constant = 52 * ratio
         labelTitle.font = UIFont.systemFont(ofSize: 13 * ratio)
-
+        
         superView.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
         superView.addConstraint(NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: superView, attribute: .leading, multiplier: 1, constant: 0))
         superView.addConstraint(NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: superView, attribute: .trailing, multiplier: 1, constant: 0))
         superView.addConstraint(NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: superView, attribute: .top, multiplier: 1, constant: 0))
         superView.addConstraint(NSLayoutConstraint(item: self, attribute: .bottom , relatedBy: .equal, toItem: superView, attribute: .bottom, multiplier: 1, constant: 0))
-
+        
         alpha = 0
         UIView.animate(withDuration: 0.1) {
             self.alpha = 1
         }
-        
-        imageView.layer.removeAnimation(forKey: "rotation")
+    }
+    
+    private var type = HUDType.loading
+    
+    private func reload(type:HUDType,title:String) {
+        self.type = type
         imageView.image = UIImage(named: type.rawValue, in: HUD.bundle, compatibleWith: nil)
+        labelTitle.text = title
         if (type == .loading) {
-            let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
-            rotation.toValue = Double.pi * 2
-            rotation.duration = 1.2
-            rotation.repeatCount = MAXFLOAT
-            rotation.isRemovedOnCompletion = false
-            imageView.layer.add(rotation, forKey: "rotation")
+            if imageView.layer.animation(forKey: "rotation") == nil {
+                let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
+                rotation.toValue = Double.pi * 2
+                rotation.duration = 1.2
+                rotation.repeatCount = MAXFLOAT
+                rotation.isRemovedOnCompletion = false
+                imageView.layer.add(rotation, forKey: "rotation")
+            }
+            isUserInteractionEnabled = true
         } else {// 2s后移除
+            imageView.layer.removeAnimation(forKey: "rotation")
             isUserInteractionEnabled = false
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.hide()

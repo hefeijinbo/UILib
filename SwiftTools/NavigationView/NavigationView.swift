@@ -56,6 +56,12 @@ public class NavigationView: UIView {
     @objc @IBOutlet public weak var rightButton2: UIButton!
     @objc @IBOutlet public var height: NSLayoutConstraint!
 
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        if UIDevice.isPhoneX {
+            height?.constant += 24
+        }
+    }
 }
 
 extension UIView {
@@ -65,4 +71,16 @@ extension UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[view]|", options: .alignAllBottom, metrics: nil, views: ["view": view]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: .alignAllBottom, metrics: nil, views: ["view": view]))
     }
+}
+
+extension UIDevice {
+    @objc public static var isPhoneX: Bool = {
+        if #available(iOS 11, *) {
+            if let w = UIApplication.shared.delegate?.window,
+                let window = w, window.safeAreaInsets.left > 0 || window.safeAreaInsets.bottom > 0 {
+                return true
+            }
+        }
+        return false
+    }()
 }

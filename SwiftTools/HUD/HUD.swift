@@ -74,6 +74,7 @@ public class HUD: UIView {
         case loading = "loading_hud" //需要手动调用 hide 方法关闭
         case success = "success_hud"
         case failure = "failure_hud" //自动关闭
+        case warning = "warning_hud"
     }
     
     private static let bundle = Bundle(for: HUD.self)
@@ -91,11 +92,11 @@ public class HUD: UIView {
         guard let superView = UIApplication.shared.keyWindow else {
             return
         }
-        var ratio:CGFloat = 1.5 //iPad1.5倍缩放
+        var ratio:CGFloat = 1.2 //iPad1.5倍缩放
         if UIDevice.current.userInterfaceIdiom != .pad {
             ratio = UIScreen.main.bounds.size.width / 375.0//相对于iPhone 6的比例
         }
-        viewContainer.layer.cornerRadius = 9 * ratio
+        viewContainer.layer.cornerRadius = 2
         constraintImageViewTop.constant = 14 * ratio
         constraintTitleBottom.constant = 14 * ratio
         constraintLabelTitleTop.constant = 9.6 * ratio
@@ -123,13 +124,13 @@ public class HUD: UIView {
     
     private func reload(type:HUDType,title:String) {
         self.type = type
-        imageView.image = UIImage(named: type.rawValue, in: HUD.bundle, compatibleWith: nil)
+        imageView.image = UIImage(named: type.rawValue + ".png", in: HUD.bundle, compatibleWith: nil)
         labelTitle.text = title
         if (type == .loading) {
             if imageView.layer.animation(forKey: "rotation") == nil {
                 let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
                 rotation.toValue = Double.pi * 2
-                rotation.duration = 1.2
+                rotation.duration = 2
                 rotation.repeatCount = MAXFLOAT
                 rotation.isRemovedOnCompletion = false
                 imageView.layer.add(rotation, forKey: "rotation")

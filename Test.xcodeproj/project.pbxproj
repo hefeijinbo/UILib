@@ -13,15 +13,16 @@
 		5CC0B7C12100EA4F006F6DE4 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC0B7A32100EA4F006F6DE4 /* NavigationView.swift */; };
 		5CC0B7C52100EA4F006F6DE4 /* Toast.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC0B7A92100EA4F006F6DE4 /* Toast.xib */; };
 		5CC0B7C62100EA4F006F6DE4 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC0B7AA2100EA4F006F6DE4 /* Toast.swift */; };
-		5CC0B7D02100EA4F006F6DE4 /* success_hud.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC0B7B72100EA4F006F6DE4 /* success_hud.png */; };
 		5CC0B7D12100EA4F006F6DE4 /* HUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC0B7B82100EA4F006F6DE4 /* HUD.xib */; };
 		5CC0B7D22100EA4F006F6DE4 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC0B7B92100EA4F006F6DE4 /* HUD.swift */; };
-		5CC0B7D32100EA4F006F6DE4 /* failure_hud.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC0B7BA2100EA4F006F6DE4 /* failure_hud.png */; };
-		5CC0B7D42100EA4F006F6DE4 /* loading_hud.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC0B7BB2100EA4F006F6DE4 /* loading_hud.png */; };
 		5CCB09401C54A5BC00976619 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB093F1C54A5BC00976619 /* AppDelegate.swift */; };
 		5CCB09421C54A5BC00976619 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB09411C54A5BC00976619 /* ViewController.swift */; };
 		5CCB09451C54A5BC00976619 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCB09431C54A5BC00976619 /* Main.storyboard */; };
 		5CCB094A1C54A5BC00976619 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCB09481C54A5BC00976619 /* LaunchScreen.storyboard */; };
+		E4394E152341717100DA12A5 /* success_hud.png in Resources */ = {isa = PBXBuildFile; fileRef = E4394E142341717100DA12A5 /* success_hud.png */; };
+		E4394E172341719D00DA12A5 /* failure_hud.png in Resources */ = {isa = PBXBuildFile; fileRef = E4394E162341719C00DA12A5 /* failure_hud.png */; };
+		E4394E19234171BC00DA12A5 /* loading_hud.png in Resources */ = {isa = PBXBuildFile; fileRef = E4394E18234171BC00DA12A5 /* loading_hud.png */; };
+		E4394E1B234171F000DA12A5 /* warning_hud.png in Resources */ = {isa = PBXBuildFile; fileRef = E4394E1A234171F000DA12A5 /* warning_hud.png */; };
 		E4E8BD70227745F600AF45FF /* ImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E8BD6F227745F600AF45FF /* ImageBrowser.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,17 +48,18 @@
 		5CC0B7A32100EA4F006F6DE4 /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		5CC0B7A92100EA4F006F6DE4 /* Toast.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Toast.xib; sourceTree = "<group>"; };
 		5CC0B7AA2100EA4F006F6DE4 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
-		5CC0B7B72100EA4F006F6DE4 /* success_hud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = success_hud.png; sourceTree = "<group>"; };
 		5CC0B7B82100EA4F006F6DE4 /* HUD.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HUD.xib; sourceTree = "<group>"; };
 		5CC0B7B92100EA4F006F6DE4 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
-		5CC0B7BA2100EA4F006F6DE4 /* failure_hud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = failure_hud.png; sourceTree = "<group>"; };
-		5CC0B7BB2100EA4F006F6DE4 /* loading_hud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_hud.png; sourceTree = "<group>"; };
 		5CCB093C1C54A5BC00976619 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCB093F1C54A5BC00976619 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CCB09411C54A5BC00976619 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5CCB09441C54A5BC00976619 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CCB09491C54A5BC00976619 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CCB094B1C54A5BC00976619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4394E142341717100DA12A5 /* success_hud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = success_hud.png; sourceTree = "<group>"; };
+		E4394E162341719C00DA12A5 /* failure_hud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = failure_hud.png; sourceTree = "<group>"; };
+		E4394E18234171BC00DA12A5 /* loading_hud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_hud.png; sourceTree = "<group>"; };
+		E4394E1A234171F000DA12A5 /* warning_hud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warning_hud.png; sourceTree = "<group>"; };
 		E4E8BD6F227745F600AF45FF /* ImageBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBrowser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,11 +106,12 @@
 		5CC0B7B62100EA4F006F6DE4 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
-				5CC0B7B72100EA4F006F6DE4 /* success_hud.png */,
+				E4394E1A234171F000DA12A5 /* warning_hud.png */,
+				E4394E18234171BC00DA12A5 /* loading_hud.png */,
+				E4394E162341719C00DA12A5 /* failure_hud.png */,
+				E4394E142341717100DA12A5 /* success_hud.png */,
 				5CC0B7B82100EA4F006F6DE4 /* HUD.xib */,
 				5CC0B7B92100EA4F006F6DE4 /* HUD.swift */,
-				5CC0B7BA2100EA4F006F6DE4 /* failure_hud.png */,
-				5CC0B7BB2100EA4F006F6DE4 /* loading_hud.png */,
 			);
 			path = HUD;
 			sourceTree = "<group>";
@@ -215,13 +218,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4394E19234171BC00DA12A5 /* loading_hud.png in Resources */,
+				E4394E1B234171F000DA12A5 /* warning_hud.png in Resources */,
 				5CC0B7C02100EA4F006F6DE4 /* NavigationView.xib in Resources */,
 				5CC0B7D12100EA4F006F6DE4 /* HUD.xib in Resources */,
-				5CC0B7D02100EA4F006F6DE4 /* success_hud.png in Resources */,
+				E4394E172341719D00DA12A5 /* failure_hud.png in Resources */,
 				5CC0B7C52100EA4F006F6DE4 /* Toast.xib in Resources */,
-				5CC0B7D32100EA4F006F6DE4 /* failure_hud.png in Resources */,
+				E4394E152341717100DA12A5 /* success_hud.png in Resources */,
 				5CCB094A1C54A5BC00976619 /* LaunchScreen.storyboard in Resources */,
-				5CC0B7D42100EA4F006F6DE4 /* loading_hud.png in Resources */,
 				5CCB09451C54A5BC00976619 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

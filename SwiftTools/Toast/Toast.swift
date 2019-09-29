@@ -37,7 +37,7 @@ public class Toast: UIView {
     //MARK: private
     private func configureToast(title: String, inView: UIView, position:ToastPosition) {
         labelTitle.text = title
-        let ratio = UIScreen.main.bounds.size.width / 375.0
+        let ratio: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 1.2 : 1
         constraintTop.constant = 16 * ratio
         constraintBottom.constant = 16 * ratio
         constraintLeading.constant = 13.7 * ratio

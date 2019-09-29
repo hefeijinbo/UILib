@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationView" customModule="Test" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationView" customModule="UILib" customModuleProvider="target">
             <connections>
                 <outlet property="leftButton" destination="diQ-84-gSN" id="bK0-5h-JDx"/>
                 <outlet property="lineView" destination="DIh-BT-1ec" id="NjC-ws-Lh8"/>
                 <outlet property="rightButton" destination="hCB-oj-0Pq" id="5gS-AH-SRJ"/>
                 <outlet property="rightButton2" destination="11Q-yL-pVC" id="UNq-dm-kkg"/>
+                <outlet property="rightButtonBottom" destination="J7M-LU-21S" id="gaf-kN-MaT"/>
+                <outlet property="rightButtonHeight" destination="jeX-ra-E0w" id="Xlm-18-20h"/>
                 <outlet property="subTitleLabel" destination="h4m-0c-RKa" id="Do2-sS-oYE"/>
                 <outlet property="titleLabel" destination="CzM-Wt-N77" id="kRQ-iC-jLK"/>
             </connections>
@@ -24,10 +26,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
             <subviews>
                 <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="66T-r7-Uzl">
-                    <rect key="frame" x="68" y="20" width="184" height="44"/>
+                    <rect key="frame" x="68" y="20" width="176" height="44"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-2q-hBM">
-                            <rect key="frame" x="92" y="22" width="0.0" height="0.0"/>
+                            <rect key="frame" x="88" y="22" width="0.0" height="0.0"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzM-Wt-N77">
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -69,7 +71,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCB-oj-0Pq">
-                    <rect key="frame" x="260" y="20" width="44" height="44"/>
+                    <rect key="frame" x="252" y="20" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="0iM-r1-m2f"/>
                         <constraint firstAttribute="height" constant="44" id="jeX-ra-E0w"/>
@@ -77,7 +79,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11Q-yL-pVC">
-                    <rect key="frame" x="208" y="20" width="44" height="44"/>
+                    <rect key="frame" x="200" y="20" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="jNc-lc-8cX"/>
                         <constraint firstAttribute="height" constant="44" id="ohj-Ec-uGN"/>
@@ -96,7 +98,7 @@
             <constraints>
                 <constraint firstItem="diQ-84-gSN" firstAttribute="bottom" secondItem="YTf-ed-9Wq" secondAttribute="bottom" id="195-Yr-2v1"/>
                 <constraint firstAttribute="trailing" secondItem="DIh-BT-1ec" secondAttribute="trailing" id="25A-ga-hbF"/>
-                <constraint firstItem="hCB-oj-0Pq" firstAttribute="trailing" secondItem="YTf-ed-9Wq" secondAttribute="trailingMargin" id="4iI-a1-8Gb"/>
+                <constraint firstItem="hCB-oj-0Pq" firstAttribute="trailing" secondItem="YTf-ed-9Wq" secondAttribute="trailingMargin" constant="-8" id="4iI-a1-8Gb"/>
                 <constraint firstAttribute="bottom" secondItem="hCB-oj-0Pq" secondAttribute="bottom" id="J7M-LU-21S"/>
                 <constraint firstItem="hCB-oj-0Pq" firstAttribute="leading" secondItem="11Q-yL-pVC" secondAttribute="trailing" constant="8" id="SEW-ny-QX0"/>
                 <constraint firstAttribute="height" constant="64" id="XSJ-lc-XM9"/>

@@ -14,6 +14,9 @@ public class NavigationView: UIView {
         titleLabel.textColor = color
     }
     
+    @IBOutlet weak var rightButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var rightButtonBottom: NSLayoutConstraint!
+    
     @objc public func setLeftButtonTitle(_ title: String, titleColor: UIColor, target: Any, action: Selector) {
         leftButton.setImage(nil, for: .normal)
         leftButton.setTitle(title, for: .normal)
@@ -35,6 +38,17 @@ public class NavigationView: UIView {
         rightButton.setTitle(title, for: .normal)
         rightButton.setTitleColor(titleColor, for: .normal)
         rightButton.addTarget(target, action: action, for: .touchUpInside)
+    }
+    
+    @objc public func setRightBlueButtonTitle(_ title: String, target: Any, action: Selector) {
+        rightButton.setTitle("  " + title + "  ", for: .normal)
+        rightButton.addTarget(target, action: action, for: .touchUpInside)
+        rightButton.backgroundColor = UIColor(red: 0x32 / 255.0, green: 0x89 / 255.0, blue: 0xFA / 255.0, alpha: 1)
+        rightButton.setTitleColor(UIColor.white, for: .normal)
+        rightButton.layer.cornerRadius = 4
+        rightButton.layer.masksToBounds = true
+        rightButtonHeight.constant = 32
+        rightButtonBottom.constant = 7
     }
     
     @objc public func setRightButton2Title(_ title: String, titleColor: UIColor, target: Any, action: Selector) {

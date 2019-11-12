@@ -86,9 +86,7 @@ public class NavigationView: UIView {
 
     public override func awakeFromNib() {
         super.awakeFromNib()
-        if UIDevice.isPhoneX {
-            height?.constant += 24
-        }
+        height?.constant = statusBarHeight + 44
     }
 }
 
@@ -101,14 +99,5 @@ extension UIView {
     }
 }
 
-extension UIDevice {
-    @objc public static var isPhoneX: Bool = {
-        if #available(iOS 11, *) {
-            if let w = UIApplication.shared.delegate?.window,
-                let window = w, window.safeAreaInsets.left > 0 || window.safeAreaInsets.bottom > 0 {
-                return true
-            }
-        }
-        return false
-    }()
-}
+public let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+public let navigationHeight = statusBarHeight + 44

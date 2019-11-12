@@ -10,4 +10,5 @@ Pod::Spec.new do |s|
     s.source_files = 'SwiftTools/**/*.swift'
     s.resources    = 'SwiftTools/**/*.{png,jpg,xib,storyboard,xcassets}'
     s.swift_version = '5.0'
+    s.ios.deployment_target = '9.0'
 end

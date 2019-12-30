@@ -17,6 +17,7 @@ public class HUD: UIView {
             hud.reload(type: .loading, title: title)
             return hud
         }
+        hide()
         let hud = bundle.loadNibNamed("HUD", owner: nil, options: nil)?.first as! HUD
         hud.addToWindow()
         hud.reload(type: .loading, title: title)
@@ -25,10 +26,7 @@ public class HUD: UIView {
 
     @discardableResult
     @objc public static func showSuccess(_ title: String) -> HUD {
-        if let hud = existHUD {
-            hud.reload(type: .success, title: title)
-            return hud
-        }
+        hide()
         let hud = bundle.loadNibNamed("HUD", owner: nil, options: nil)?.first as! HUD
         hud.addToWindow()
         hud.reload(type: .success, title: title)
@@ -37,10 +35,7 @@ public class HUD: UIView {
     
     @discardableResult
     @objc public static func showError(_ title: String) -> HUD {
-        if let hud = existHUD {
-            hud.reload(type: .failure, title: title)
-            return hud
-        }
+        hide()
         let hud = bundle.loadNibNamed("HUD", owner: nil, options: nil)?.first as! HUD
         hud.addToWindow()
         hud.reload(type: .failure, title: title)

@@ -16,6 +16,7 @@ public class NavigationView: UIView {
     
     @IBOutlet weak var rightButtonHeight: NSLayoutConstraint!
     @IBOutlet weak var rightButtonBottom: NSLayoutConstraint!
+    @IBOutlet weak var rightButton2Width: NSLayoutConstraint!
     
     @objc public func setLeftButtonTitle(_ title: String, titleColor: UIColor, target: Any, action: Selector) {
         leftButton.setImage(nil, for: .normal)
@@ -53,12 +54,14 @@ public class NavigationView: UIView {
     
     @objc public func setRightButton2Title(_ title: String, titleColor: UIColor, target: Any, action: Selector) {
         rightButton2.setTitle(title, for: .normal)
+        rightButton2Width.constant = 44
         rightButton2.setTitleColor(titleColor, for: .normal)
         rightButton2.addTarget(target, action: action, for: .touchUpInside)
     }
     
     @objc public func setRightButton2Image(_ image: UIImage, target: Any, action: Selector) {
         rightButton2.setImage(image, for: .normal)
+        rightButton2Width.constant = 44
         rightButton2.addTarget(target, action: action, for: .touchUpInside)
     }
     

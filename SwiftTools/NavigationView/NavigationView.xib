@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,6 +13,7 @@
                 <outlet property="lineView" destination="DIh-BT-1ec" id="NjC-ws-Lh8"/>
                 <outlet property="rightButton" destination="hCB-oj-0Pq" id="5gS-AH-SRJ"/>
                 <outlet property="rightButton2" destination="11Q-yL-pVC" id="UNq-dm-kkg"/>
+                <outlet property="rightButton2Width" destination="aq4-bq-42s" id="Fj9-mG-dWN"/>
                 <outlet property="rightButtonBottom" destination="J7M-LU-21S" id="gaf-kN-MaT"/>
                 <outlet property="rightButtonHeight" destination="jeX-ra-E0w" id="Xlm-18-20h"/>
                 <outlet property="subTitleLabel" destination="h4m-0c-RKa" id="Do2-sS-oYE"/>
@@ -26,10 +25,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
             <subviews>
                 <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="66T-r7-Uzl">
-                    <rect key="frame" x="68" y="20" width="176" height="44"/>
+                    <rect key="frame" x="68" y="20" width="192" height="44"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-2q-hBM">
-                            <rect key="frame" x="88" y="22" width="0.0" height="0.0"/>
+                            <rect key="frame" x="96" y="22" width="0.0" height="0.0"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzM-Wt-N77">
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -71,7 +70,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCB-oj-0Pq">
-                    <rect key="frame" x="252" y="20" width="44" height="44"/>
+                    <rect key="frame" x="260" y="20" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="0iM-r1-m2f"/>
                         <constraint firstAttribute="height" constant="44" id="jeX-ra-E0w"/>
@@ -79,9 +78,9 @@
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11Q-yL-pVC">
-                    <rect key="frame" x="200" y="20" width="44" height="44"/>
+                    <rect key="frame" x="260" y="20" width="0.0" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="jNc-lc-8cX"/>
+                        <constraint firstAttribute="width" id="aq4-bq-42s"/>
                         <constraint firstAttribute="height" constant="44" id="ohj-Ec-uGN"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -98,19 +97,20 @@
             <constraints>
                 <constraint firstItem="diQ-84-gSN" firstAttribute="bottom" secondItem="YTf-ed-9Wq" secondAttribute="bottom" id="195-Yr-2v1"/>
                 <constraint firstAttribute="trailing" secondItem="DIh-BT-1ec" secondAttribute="trailing" id="25A-ga-hbF"/>
-                <constraint firstItem="hCB-oj-0Pq" firstAttribute="trailing" secondItem="YTf-ed-9Wq" secondAttribute="trailingMargin" constant="-8" id="4iI-a1-8Gb"/>
+                <constraint firstItem="hCB-oj-0Pq" firstAttribute="trailing" secondItem="YTf-ed-9Wq" secondAttribute="trailingMargin" id="4iI-a1-8Gb"/>
+                <constraint firstItem="11Q-yL-pVC" firstAttribute="leading" secondItem="66T-r7-Uzl" secondAttribute="trailing" id="9Oa-vI-RBv"/>
                 <constraint firstAttribute="bottom" secondItem="hCB-oj-0Pq" secondAttribute="bottom" id="J7M-LU-21S"/>
-                <constraint firstItem="hCB-oj-0Pq" firstAttribute="leading" secondItem="11Q-yL-pVC" secondAttribute="trailing" constant="8" id="SEW-ny-QX0"/>
+                <constraint firstItem="hCB-oj-0Pq" firstAttribute="leading" secondItem="11Q-yL-pVC" secondAttribute="trailing" id="SEW-ny-QX0"/>
                 <constraint firstAttribute="height" constant="64" id="XSJ-lc-XM9"/>
                 <constraint firstAttribute="bottom" secondItem="66T-r7-Uzl" secondAttribute="bottom" id="axi-w4-9qF"/>
                 <constraint firstItem="DIh-BT-1ec" firstAttribute="leading" secondItem="YTf-ed-9Wq" secondAttribute="leading" id="f4j-Sa-dFL"/>
                 <constraint firstItem="diQ-84-gSN" firstAttribute="leading" secondItem="YTf-ed-9Wq" secondAttribute="leadingMargin" id="g5n-Uy-ffW"/>
-                <constraint firstItem="hCB-oj-0Pq" firstAttribute="leading" secondItem="66T-r7-Uzl" secondAttribute="trailing" constant="8" id="gEc-e7-Ub2"/>
-                <constraint firstAttribute="bottom" secondItem="11Q-yL-pVC" secondAttribute="bottom" id="j6Q-WT-bFQ"/>
+                <constraint firstItem="11Q-yL-pVC" firstAttribute="centerY" secondItem="hCB-oj-0Pq" secondAttribute="centerY" id="n12-VA-9CA"/>
                 <constraint firstAttribute="bottom" secondItem="DIh-BT-1ec" secondAttribute="bottom" id="yao-yy-0nQ"/>
                 <constraint firstItem="66T-r7-Uzl" firstAttribute="leading" secondItem="diQ-84-gSN" secondAttribute="trailing" constant="8" id="zeW-GA-cjc"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131" y="104"/>
         </view>
     </objects>
 </document>

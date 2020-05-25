@@ -89,7 +89,7 @@ public class HUD: UIView {
         }
         var ratio:CGFloat = 1.2 //iPad1.5倍缩放
         if UIDevice.current.userInterfaceIdiom != .pad {
-            ratio = UIScreen.main.bounds.size.width / 375.0//相对于iPhone 6的比例
+            ratio = min(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height) / 375.0//相对于iPhone 6的比例
         }
         viewContainer.layer.cornerRadius = 2
         constraintImageViewTop.constant = 14 * ratio
